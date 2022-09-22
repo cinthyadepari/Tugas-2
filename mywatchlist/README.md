@@ -10,3 +10,8 @@ Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah p
 
 Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 -- pertama membuat serta menjalankan virtual environment, menginstall dependencies, dan melakukan runserver terlebih dahulu. lalu saya membuat app dengan nama mywatchlist. Dan kemudian saya mulai membuat code di views, models, serta url. Saya juga membuat folder fixtures yang berisi data-data yang akan ditampilkan dalam bentuk file .json. Pada folder templates saya membuat 3 file yaitu base.html, create.html, dan juga read.html. Setelah semua code saya selesai, saya langsung melakukan test dan semua berjalan.
+
+![html](https://user-images.githubusercontent.com/112605451/191650108-6514b595-d677-40c4-97e6-8a04dcf3da5d.png)
+![json](https://user-images.githubusercontent.com/112605451/191650115-ac672a8a-b7be-4fb3-8837-76a8d1796013.png)
+![xml (1)](https://user-images.githubusercontent.com/112605451/191650140-ffa4470c-b49c-48fc-95db-310890c28f09.png)
+![xml (2)](https://user-images.githubusercontent.com/112605451/191650146-8c0a056b-cfbd-4462-84c3-7ae2368236c1.png)
