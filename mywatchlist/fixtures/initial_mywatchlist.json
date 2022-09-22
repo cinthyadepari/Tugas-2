@@ -1,0 +1,121 @@
+[
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 1,
+        "fields": {
+            "title": "KKN di Desa Penari",
+            "watched": "Sudah",
+            "release_date": "2022-04-30",
+            "rating": 10,
+            "review": "bagus"
+        }
+    },
+
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 2,
+        "fields": {
+            "title": "Ngeri-ngeri Sedap",
+            "watched": "Sudah",
+            "release_date": "2022-06-02",
+            "rating": 10,
+            "review": "sangat bagus dan cocok ditonton untuk semua usia"
+        }
+    },
+
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 3,
+        "fields": {
+            "title": "Jakarta vs Everybody",
+            "watched": "Sudah",
+            "release_date": "2022-03-17",
+            "rating": 8,
+            "review": "bagus"
+        }
+    },
+
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 4,
+        "fields": {
+            "title": "Dear Nathan: Thank You Salma",
+            "watched": "Sudah",
+            "release_date": "2022-01-13",
+            "rating": 9,
+            "review": "bagus"
+        }
+    },
+
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 5,
+        "fields": {
+            "title": "Kukira Kau Rumah",
+            "watched": "Sudah",
+            "release_date": "2022-02-03",
+            "rating": 9,
+            "review": "bagus"
+        }
+    },
+
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 6,
+        "fields": {
+            "title": "Ali & Ratu Ratu Queens",
+            "watched": "Sudah",
+            "release_date": "2022-04-3",
+            "rating": 9,
+            "review": "bagus"
+        }
+    },
+
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 7,
+        "fields": {
+            "title": "Keluarga Cemara 2",
+            "watched": "Sudah",
+            "release_date": "2022-06-23",
+            "rating": 10,
+            "review": "sangat bagus"
+        }
+    },
+
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 8,
+        "fields": {
+            "title": "Miracle in Cell No. 7",
+            "watched": "Sudah",
+            "release_date": "2022-09-08",
+            "rating": 10,
+            "review": "sangat bagus"
+        }
+    },
+
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 9,
+        "fields": {
+            "title": "Sayap Sayap Patah",
+            "watched": "Sudah",
+            "release_date": "2022-08-18",
+            "rating": 9,
+            "review": "bagus"
+        }
+    },
+
+    {
+        "model": "mywatchlist.modelmywatchlist",
+        "pk": 10,
+        "fields": {
+            "title": "Mencuri Raden Saleh",
+            "watched": "Sudah",
+            "release_date": "2022-08-25",
+            "rating": 10,
+            "review": "sangat bagus"
+        }
+    }
+]

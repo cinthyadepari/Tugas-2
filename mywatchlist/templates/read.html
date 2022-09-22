@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    {{title}}
+{% endblock page_title %}
+
+{% block content %}
+<div class="container" style="margin-top :120px; min-height:100vh">
+    <h1>Daftar Watch List</h1>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Title</th>
+            <th scope="col">Watched</th>
+            <th scope="col">Tanggal Rilis SKS</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Review</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for watchlist in all_watchlist %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th> <!--kalo mau mulai dari 0, pake {{forloop.counter0}}-->
+              <td>{{watchlist.title}}</td>
+              <td>{{watchlist.watched}}</td>
+              <td>{{watchlist.release_date}}</td>
+              <td>{{watchlist.rating}}</td>
+              <td>{{watchlist.review}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+{% endblock content %}
