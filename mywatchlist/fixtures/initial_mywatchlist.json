@@ -3,7 +3,7 @@
         "model": "mywatchlist.modelmywatchlist",
         "pk": 1,
         "fields": {
-            "title": "KKN di Desa Penari",
+            "title": "Gara-Gara Warisan",
             "watched": "Sudah",
             "release_date": "2022-04-30",
             "rating": 10,
