@@ -10,7 +10,11 @@ link heroku : https://katalogpbp.herokuapp.com/todolist/
 
 3. Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
 
--- pertama user diminta untuk menginput data diri yang terdiri dari username serta password(jika belum ada maka dapat masuk ke menu daftar akun), setelahnya kita dapat mengecek apakah form telah disubmisi atau belum. Lalu menyimpan data tersebut dengan code yang telah dibuat seperti berikut. Apabila datanya telah kita dapatkan, kita dapat menyimpannya ke dalam data base dengan menggunakan method save(). Setelah semua proses telah terjadi, maka kita dapat merender data tersebut ke HTML dan mengiterasinya ke dalam HTML.
+-- pertama user diminta untuk menginput data diri yang terdiri dari username serta password(jika belum ada maka dapat masuk ke menu daftar akun), setelahnya kita dapat mengecek apakah form telah disubmisi atau belum. Lalu menyimpan data tersebut dengan code yang telah dibuat seperti berikut. 
+
+![o](https://user-images.githubusercontent.com/112605451/192852176-a81cf567-f918-46bb-aad3-d6588476e646.png)
+
+Apabila datanya telah kita dapatkan, kita dapat menyimpannya ke dalam data base dengan menggunakan method save(). Setelah semua proses telah terjadi, maka kita dapat merender data tersebut ke HTML dan mengiterasinya ke dalam HTML.
 
 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 
