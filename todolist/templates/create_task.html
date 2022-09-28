@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% block content %}
+
+<div class="container" style="margin-top: 120px;margin-bottom:30px; min-height:100vh;">
+    <form method="POST">
+        {% csrf_token %}
+            <div class="form-group">
+              <label>Judul</label>
+              {{form_todolist.title}}
+            </div>
+
+            <div class="form-group">
+                <label>Tanggal</label>
+                {{form_todolist.tanggal}}
+              </div>
+
+            <div class="form-group">
+                <label>Deskripsi</label>
+                {{form_todolist.deskripsi}}
+              </div>
+  
+  
+          <button type="submit" class="btn btn-primary">Tambah Task</button>
+        </form>
+</div>
+    {% if messages %}  
+            <ul>   
+                {% for message in messages %}  
+                    <li>{{ message }}</li>  
+                    {% endfor %}  
+            </ul>   
+        {% endif %}
+{% endblock content %}
+

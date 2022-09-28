@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+{% block content %}
+<h5>Nama: </h5>
+<p>{{nama}}</p>
+
+    <table border="1">
+        <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Tanggal</th>
+              <th scope="col">Deskripsi</th>
+            </tr>
+        </thead>
+    
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    {% for task in list_task %}
+        <tr>
+                <td>{{task.title}}</td>
+                <td>{{task.tanggal}}</td>
+                <td>{{task.deskripsi}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table> 
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+    <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+{% endblock content %}

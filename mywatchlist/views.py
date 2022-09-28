@@ -19,12 +19,6 @@ def readHtml(request):
 def readXml(request):
     all_watchlist = ModelMyWatchList.objects.all()
 
-    context = {
-        'all_watchlist' : all_watchlist,
-        'title' : 'All Watch List'
-    }
-    print(all_watchlist)
-
     return HttpResponse(serializers.serialize("xml", all_watchlist), content_type="application/xml")
 
 def readJson(request):
