@@ -1,0 +1,31 @@
+1. Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+
+-- internal --> merupakan kode CSS yang ditulis di dalam tag <stylr> dan kode HTML dituliskan di bagian atas (header) file HTML. 
+Kelebihan dari internal ini adalah sangat cocok apabila dipakai untuk menciptakan halaman web dengan 
+tampilan yang berbeda(memberikan tampilan yang unik pada setiap halaman web).
+-- eksternal --> merupakan kode CSS yang ditulis terpisah dengan kode HTML.
+Kelebihan dari eksternal adalah pengimplementasiannya lebih sederhana dan simpel daripada menambahkan kode CSS
+di setiap elemen HTML yang ingin diatur tampilannya.
+-- inline --> kode CSS yang ditulis langsing pada atribut elemen HTML. 
+Kelebihan dari inline adalah sangat membantu apabila hanya ingin menguji dan melihat perubahan pada satu elemen.
+
+2. Jelaskan tag HTML5 yang kamu ketahui.
+-- <head>...</head> merupakan bagian kepala dari dokumen/file.
+-- <nav>...</nav> merupakan bagian dari dokumen yang dimaksudkan untuk memudahkan dalam proses navigasi
+-- <a>...</a> untuk mendeskripsikan hyperlink
+-- <b>...</b> unutk membuat text menjadi bold
+-- <body>...</body> mendefinisikan isi/badan dari dokumen
+-- <br>...</br> untuk menjeda baris tunggal
+-- <button>...</button> membuat tombol yang dapat diklik
+-- <div>...</div> menentukan bagian di dalam dokumen
+-- <form>...</form> mendefinisikan html untuk input pengguna
+
+3. Jelaskan tipe-tipe CSS selector yang kamu ketahui.
+-- selektor tag --> memilih elemen berdasarkan nama tag
+-- selektor ID --> hanya boleh digunakan oleh satu elemen saja.
+
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+-- pertama pada base.html saya menambahkan code yang mana berfungsi untuk membantu menjalankan button, 
+lalu membuat navbar yang mana code nya saya buat di file todolist.html, dan saya juga melakukan desain pada beberapa bagian 
+dengan menggunakan code yang sama. Saya juga menambahkan bebrapa elemen untuk memperunik website yang saya buat. Saya juga menambahkan background 
+pada setiap halaman baik pada saat login, register, hingga logout.
