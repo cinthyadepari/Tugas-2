@@ -5,6 +5,17 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    body {
+        background-color: rgb(238, 226, 220);
+    }
+</style>
+
+<nav class="navbar" style="background-color: lightgoldenrodyellow;font-family: monospace;"> <!--buat warna background-->
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">SELAMAT DATANG!!</span>
+    </div>
+</nav>
 
 <div class = "login">
 
@@ -38,7 +49,7 @@
         </ul>
     {% endif %}     
         
-    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+    Belum mempunyai akun? <a class="btn btn-outline-success me-2" type="button" href="{% url 'todolist:register' %}">Buat Akun</a>
 
 </div>
 

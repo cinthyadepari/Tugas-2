@@ -17,7 +17,7 @@ import datetime
 from todolist.models import Profile
 from django.contrib.auth.models import User
 
-@login_required(login_url='/wishlist/login/')
+@login_required(login_url='/todolist/login/')
 def show_todolist(request):
     data_task = Task.objects.filter(user=request.user)
     print(data_task)
@@ -69,7 +69,7 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user) # melakukan login terlebih dahulu
-            response = HttpResponseRedirect(reverse("todolist:list_task")) # membuat response
+            response = HttpResponseRedirect(reverse("todolist:show_todolist")) # membuat response
             response.set_cookie('last_login', str(datetime.datetime.now())) # membuat cookie last_login dan menambahkannya ke dalam response
             return response
             
@@ -95,7 +95,7 @@ def create_task(request):
             task.save()
             print(request.user)
             messages.success(request, (f"Task berhasil dibuat"))
-            return redirect('todolist:list_task')
+            return redirect('todolist:show_todolist')
         else:
              print("Form tidak valid")
 
@@ -104,3 +104,8 @@ def create_task(request):
         'title' : "Tambah Task",     
         }
     return render(request, "create_task.html", context)
+
+def delete_task(request, id):
+    data = Task.objects.get(pk=id)
+    data.delete()
+    return HttpResponseRedirect(reverse('todolist:show_todolist'))
