@@ -12,5 +12,6 @@ urlpatterns = [
     path('delete_task/<int:id>/', views.delete_task, name='delete_task'),
     # path('html', views.readHtml, name= 'readHtml'),
     # path('xml', views.readXml, name="readXml"),
-    # path('json', views.readJson, name="readjson"),
+    path('json/', views.show_json, name="show_json"),
+    path('/create_data', views.create_task_ajax, name='create_task_ajax'),
 ]

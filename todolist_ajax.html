@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+{% block content %}
+<style>
+    body {
+      background-color: rgb(197, 203, 227);
+    }
+</style>
+
+<nav class="navbar" style="background-color: lightgoldenrodyellow;font-family: monospace;"> <!--buat warna background-->
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">&#129409 TODOLIST</span>
+      <a class="btn btn-outline-success me-2" type="button" href="{% url 'todolist:logout' %}">Log Out</a>
+    </div>
+  </nav>
+
+<h1 style = "background-color: mistyrose; text-align: center;">&#129409{{user}}'s Todolist!&#129409</h1>
+<table class = "table table-bordered w-auto" style="margin-left:auto; margin-right:auto; margin-top:25px;">  <!--ini untuk buat tabel sekaligus ngerapihinnya-->
+    <thead style="background-color: rgb(232, 215, 209);"> <!--ini buat ngasih warna background-->
+        <tr style="font-family: monospace;">
+            <th>Title</th>
+            <th>Tanggal</th>
+            <th>Deskripsi</th>
+            </tr>
+    </thead>
+    
+    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+    {% for task in list_task %}
+        <tr style="background-color: white; font-family: monospace;">
+                <td>{{task.title}}</td>
+                <td>{{task.tanggal}}</td>
+                <td>{{task.deskripsi}}</td>
+                <td><a href="{% url 'todolist:delete_task' task.id %}" input class="btn btn-secondary">Delete</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table> 
+
+<script>
+    async function getToDoList() {
+      return fetch("{% url 'show_json' %}").then((res) => res.json())
+    }
+  
+    async function refreshToDoList() {
+          document.getElementById("table").innerHTML = ""
+          const todolist = await getToDoList()
+          let htmlString = `<tr>
+            <th>Tanggal</th>
+            <th>Title</th>
+            <th>Deskripsi</th>
+            <th>User</th>
+          </tr>`
+          todolist.forEach((item) => {
+            htmlString += `\n<tr>
+            <th>${item.fields.tanggal}</th>
+            <th>${item.fields.title}</th>
+            <th>${item.fields.deskripsi}</th>
+            <th>${item.fields.user}</th>
+          </tr>` 
+          })
+          
+          document.getElementById("table").innerHTML = htmlString
+    }
+  
+    function addToDoList() {
+      fetch("{% url 'create_task' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#form'))
+        }).then(refreshToDoList)
+      return false
+    }
+  
+    document.getElementById("button").onclick = addToDoList
+    refreshToDoList()
+  </script>
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap">
+
+    {% for card in list_task %}
+    {#  Single Card Template:#}
+    <div class="card" style="width: 18rem; margin: 10px">
+      <img src="{{ card.image }}" class="card-img-top" >
+      <div class="card-body">
+        <div style="display: flex; flex-direction: row">
+          <h5 class="card-title">{{ card.title }}</h5>
+          {#  Colored cirlce:#}
+          <div style="
+            background: midnightblue;
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            border-radius: 50%;
+          "></div>
+        </div>
+        <p class="card-text">{{ card.deskripsi }}</p>
+        <p class="card-text">{{ card.tanggal }}</p>
+        <a href="{% url 'todolist:delete_task' card.id %}" input class="btn btn-secondary">Delete</a>
+      </div>
+    </div>
+    {% endfor %}
+  
+  </div>
+
+    <a class="btn btn-sm btn-outline-danger" type="submit" href="{% url 'todolist:create_task' %}">Tambah Task Baru</a>
+    
+{% endblock content %}

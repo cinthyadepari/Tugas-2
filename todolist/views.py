@@ -1,8 +1,9 @@
 import re
+from turtle import title
 from django.shortcuts import render
 from django.core import serializers
 from django.shortcuts import redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from todolist.models import Task
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -15,6 +16,7 @@ from todolist.forms import TaskForm
 import datetime
 from todolist.models import Profile
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
@@ -108,3 +110,35 @@ def delete_task(request, id):
     data = Task.objects.get(pk=id)
     data.delete()
     return HttpResponseRedirect(reverse('todolist:show_todolist'))
+
+@login_required(login_url='/todolist/login/')
+def todolist_ajax(request):
+    context = {
+        'nama': 'Cinthya Yosephine Depari',
+        'last_login': request.COOKIES['last_login'],
+    }
+    return render(request, "todolist_ajax.html", context)
+
+@csrf_exempt
+def finished(request, id):
+    data = Task.objects.get(user=request.user, id=id)
+    data.is_finished = not(data.is_finished)
+    data.save(update_fields=['is_finished'])
+    return JsonResponse({"Message" : "Task Telah Diupdate"})
+
+@csrf_exempt
+def hapus_data(request, id):
+    data = Task.objects.get(user=request.user, id=id)
+    data.delete()
+    return JsonResponse({"Message" : "Task Telah Dihapus"})
+
+def create_task_ajax(request):
+    if request.method == "POST":
+        title= request.POST.get('title')
+        deskripsi = request.POST.get('deskripsi')
+        user = request.user
+        tanggal = datetime.datetime.now()
+        is_finished = False
+        item = Task(title=title, deskripsi=deskripsi, user=user, tanggal=tanggal, is_finished=is_finished)
+        item.save()
+        return JsonResponse({"Message" : "Task berhasil"})
